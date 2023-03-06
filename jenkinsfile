@@ -1,25 +1,12 @@
 pipeline {
     agent any
-    
-    environment {
-        CI = 'true'
-    }
-    stages {
-        stage('Deliver for development') {
-            when {
-                branch 'feature/100'
-            }
+
+      stages {
+        stage('Hello') {
             steps {
-                sh 'echo hello'
+                echo 'Hello World'
             }
         }
-        stage('Deploy for production') {
-            when {
-                branch 'main'
-            }
-            steps {
-                sh 'echo hello'
-            }
-        }
-    }
+        
+     }
 }
